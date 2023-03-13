@@ -8,6 +8,7 @@ namespace ClassLibrary1.Core
 {
     public class ClientCompany : BaseClientInfo
     {
+        [IgnoreMapping]
         public Guid Id { get; set; }
 
         public DateTime CreateDate { get; set; }

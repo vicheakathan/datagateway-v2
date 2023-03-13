@@ -26,7 +26,9 @@ namespace ClassLibrary1.Model
         public ICollection<Tenant>? Tenants { get; set; }
 
         public Company() 
-        { 
+        {
+            Id = Guid.NewGuid(); 
+
             CreateDate = DateTime.Now;
 
             Tenants = new List<Tenant>();

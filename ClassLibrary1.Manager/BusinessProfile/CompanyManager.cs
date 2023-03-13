@@ -52,7 +52,7 @@ namespace ClassLibrary1.Manager
             //company.Name = c.Name;
             //company.Address = c.Address;
 
-            _mapper.Map<ClientCompany, Company>(entity, company);
+            _mapper.Map<Company, ClientCompany>(company, entity);
 
             _context.Update(company);
             await _context.SaveChangesAsync();
