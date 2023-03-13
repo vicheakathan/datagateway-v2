@@ -3946,24 +3946,30 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.3",
       "Microsoft.EntityFrameworkCore >= 7.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.3",
+      "Microsoft.EntityFrameworkCore.Relational >= 7.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rd-user\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Model\\ClassLibrary1.Model.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Model\\ClassLibrary1.Model.csproj",
       "projectName": "ClassLibrary1.Model",
-      "projectPath": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Model\\ClassLibrary1.Model.csproj",
-      "packagesPath": "C:\\Users\\rd-user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Model\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Model\\ClassLibrary1.Model.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Model\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\rd-user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3977,8 +3983,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj": {
-              "projectPath": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj"
+            "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj"
             }
           }
         }
@@ -4019,6 +4025,10 @@
             "target": "Package",
             "version": "[7.0.3, )"
           },
+          "Microsoft.EntityFrameworkCore.Relational": {
+            "target": "Package",
+            "version": "[7.0.3, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[7.0.3, )"
@@ -4046,7 +4056,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

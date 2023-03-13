@@ -50,6 +50,7 @@ builder.Services.AddMvc();
 builder.Services.AddScoped<ApplicationDbContext>();
 builder.Services.AddScoped<SystemUserManager>();
 builder.Services.AddScoped<CompanyManager>();
+builder.Services.AddScoped<TenantManager>();
 
 var app = builder.Build();
 

@@ -21,14 +21,14 @@ namespace ClassLibrary1.Manager
             this._mapper = _mapper;
         }
 
-        public async Task<object> GetCompanies()
+        public async Task<object> GetCompaniesAsync()
         {
             var c = await _context.Set<Company>().ToListAsync();
 
             return c;
         }
 
-        public async Task<object> AddCompanies(ClientCompany entity)
+        public async Task<object> AddCompaniesAsync(ClientCompany entity)
         {
             var company = _mapper.Map<ClientCompany, Company>(entity);
 
@@ -38,7 +38,7 @@ namespace ClassLibrary1.Manager
             return company;
         }
 
-        public async Task<object> UpdateCompanies(ClientCompany entity)
+        public async Task<object> UpdateCompaniesAsync(ClientCompany entity)
         {
             var company = _context.Find<Company>(entity.Id);
 
@@ -47,12 +47,7 @@ namespace ClassLibrary1.Manager
                 throw new InvalidOperationException("Not Found.");
             }
 
-            //company.PhoneNumber = c.PhoneNumber;
-            //company.IsActive = c.IsActive;
-            //company.Name = c.Name;
-            //company.Address = c.Address;
-
-            _mapper.Map<Company, ClientCompany>(company, entity);
+            _mapper.Map<ClientCompany, Company>(entity, company);
 
             _context.Update(company);
             await _context.SaveChangesAsync();

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj": {}
+    "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj": {
+    "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj",
         "projectName": "ClassLibrary1.Core",
-        "projectPath": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj",
-        "packagesPath": "C:\\Users\\rd-user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Core\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\rd-user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

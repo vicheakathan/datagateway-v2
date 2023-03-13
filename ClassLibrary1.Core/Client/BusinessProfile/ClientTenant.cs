@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1.Core
 {
-    public class ClientTenant
+    public class ClientTenant : BaseClientInfo
     {
         public Guid Id { get; set; }
 
@@ -20,7 +20,7 @@ namespace ClassLibrary1.Core
 
         public bool? IsActive { get; set; }
 
-        public Guid CompayId { get; set; }
+        public Guid CompanyId { get; set; }
 
         public ClientTenant() 
         {

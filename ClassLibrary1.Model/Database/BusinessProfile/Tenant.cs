@@ -23,7 +23,7 @@ namespace ClassLibrary1.Model
         public bool? IsActive { get; set; }
 
         [ForeignKey(nameof(Company))]
-        public Guid CompnayId { get; set; }
+        public Guid CompanyId { get; set; }
 
         public Company? Company { get; set; }
 

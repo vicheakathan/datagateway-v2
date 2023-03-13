@@ -15,11 +15,11 @@ namespace WebApplication1.Controllers.BusinessProfile
         }
 
         [HttpGet]
-        public async Task<object> GetCompanies()
+        public async Task<object> GetCompaniesAsync()
         {
             try
             {
-                var response = await _companyManager.GetCompanies();
+                var response = await _companyManager.GetCompaniesAsync();
 
                 return Ok(response);
             }
@@ -30,11 +30,11 @@ namespace WebApplication1.Controllers.BusinessProfile
         }
 
         [HttpPost]
-        public async Task<object> AddCompanies([FromBody] ClientCompany compnay)
+        public async Task<object> AddCompaniesAsync([FromBody] ClientCompany compnay)
         {
             try
             {
-                var response = await _companyManager.AddCompanies(compnay);
+                var response = await _companyManager.AddCompaniesAsync(compnay);
 
                 return Ok(response);
             }
@@ -45,11 +45,11 @@ namespace WebApplication1.Controllers.BusinessProfile
         }
 
         [HttpPut]
-        public async Task<object> UpdateCompanies([FromBody] ClientCompany compnay)
+        public async Task<object> UpdateCompaniesAsync([FromBody] ClientCompany compnay)
         {
             try
             {
-                var response = await _companyManager.UpdateCompanies(compnay);
+                var response = await _companyManager.UpdateCompaniesAsync(compnay);
 
                 return Ok(response);
             }

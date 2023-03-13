@@ -151,7 +151,7 @@ namespace ClassLibrary1.Model.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CompnayId")
+                    b.Property<Guid>("CompanyId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreateDate")
@@ -171,7 +171,7 @@ namespace ClassLibrary1.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompnayId");
+                    b.HasIndex("CompanyId");
 
                     b.ToTable("Tenants");
                 });
@@ -283,7 +283,7 @@ namespace ClassLibrary1.Model.Migrations
                 {
                     b.HasOne("ClassLibrary1.Model.Company", "Company")
                         .WithMany("Tenants")
-                        .HasForeignKey("CompnayId")
+                        .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

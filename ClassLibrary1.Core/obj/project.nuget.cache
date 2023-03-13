@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8V89nsYq0xfX7KDqQpfrqAp1nRrDnTq0z29yi6zcpNoFmI315doQBUUyeWJ9eeJrd7ws7mFQOyr1L3rM4dEbVw==",
+  "dgSpecHash": "7mDxE9XZ8noGXzxm/rvO5mUj8z6ErwV8nqAqT1pbSdClS2xY/bMicxE3Y7wtn2c8Yq3OGUWGNBC9WKPsQna83Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\rd-user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }
