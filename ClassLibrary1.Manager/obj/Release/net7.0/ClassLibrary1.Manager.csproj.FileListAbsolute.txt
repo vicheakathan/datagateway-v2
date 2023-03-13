@@ -1,0 +1,17 @@
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\bin\Release\net7.0\ClassLibrary1.Manager.deps.json
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\bin\Release\net7.0\ClassLibrary1.Manager.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\bin\Release\net7.0\ClassLibrary1.Manager.pdb
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\bin\Release\net7.0\ClassLibrary1.Core.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\bin\Release\net7.0\ClassLibrary1.Model.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\bin\Release\net7.0\ClassLibrary1.Model.pdb
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\bin\Release\net7.0\ClassLibrary1.Core.pdb
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\obj\Release\net7.0\ClassLibrary1.Manager.csproj.AssemblyReference.cache
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\obj\Release\net7.0\ClassLibrary1.Manager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\obj\Release\net7.0\ClassLibrary1.Manager.AssemblyInfoInputs.cache
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\obj\Release\net7.0\ClassLibrary1.Manager.AssemblyInfo.cs
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\obj\Release\net7.0\ClassLibrary1.Manager.csproj.CoreCompileInputs.cache
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\obj\Release\net7.0\ClassLibrary1.Manager.csproj.CopyComplete
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\obj\Release\net7.0\ClassLibrary1.Manager.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\obj\Release\net7.0\refint\ClassLibrary1.Manager.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\obj\Release\net7.0\ClassLibrary1.Manager.pdb
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Manager\obj\Release\net7.0\ref\ClassLibrary1.Manager.dll

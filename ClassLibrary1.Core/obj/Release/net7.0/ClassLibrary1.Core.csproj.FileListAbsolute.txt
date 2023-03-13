@@ -1,0 +1,12 @@
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\bin\Release\net7.0\ClassLibrary1.Core.deps.json
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\bin\Release\net7.0\ClassLibrary1.Core.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\bin\Release\net7.0\ClassLibrary1.Core.pdb
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\obj\Release\net7.0\ClassLibrary1.Core.csproj.AssemblyReference.cache
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\obj\Release\net7.0\ClassLibrary1.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\obj\Release\net7.0\ClassLibrary1.Core.AssemblyInfoInputs.cache
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\obj\Release\net7.0\ClassLibrary1.Core.AssemblyInfo.cs
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\obj\Release\net7.0\ClassLibrary1.Core.csproj.CoreCompileInputs.cache
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\obj\Release\net7.0\ClassLibrary1.Core.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\obj\Release\net7.0\refint\ClassLibrary1.Core.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\obj\Release\net7.0\ClassLibrary1.Core.pdb
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Core\obj\Release\net7.0\ref\ClassLibrary1.Core.dll

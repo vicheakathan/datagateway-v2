@@ -1,0 +1,17 @@
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\bin\Release\net7.0\ClassLibrary1.Model.deps.json
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\bin\Release\net7.0\ClassLibrary1.Model.runtimeconfig.json
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\bin\Release\net7.0\ClassLibrary1.Model.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\bin\Release\net7.0\ClassLibrary1.Model.pdb
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\bin\Release\net7.0\ClassLibrary1.Core.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\bin\Release\net7.0\ClassLibrary1.Core.pdb
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\obj\Release\net7.0\ClassLibrary1.Model.csproj.AssemblyReference.cache
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\obj\Release\net7.0\ClassLibrary1.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\obj\Release\net7.0\ClassLibrary1.Model.AssemblyInfoInputs.cache
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\obj\Release\net7.0\ClassLibrary1.Model.AssemblyInfo.cs
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\obj\Release\net7.0\ClassLibrary1.Model.csproj.CoreCompileInputs.cache
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\obj\Release\net7.0\ClassLibrary1.Model.csproj.CopyComplete
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\obj\Release\net7.0\ClassLibrary1.Model.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\obj\Release\net7.0\refint\ClassLibrary1.Model.dll
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\obj\Release\net7.0\ClassLibrary1.Model.pdb
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\obj\Release\net7.0\ClassLibrary1.Model.genruntimeconfig.cache
+C:\Users\rd-user\project\repos\WebApplication1\ClassLibrary1.Model\obj\Release\net7.0\ref\ClassLibrary1.Model.dll
