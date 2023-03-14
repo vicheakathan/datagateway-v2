@@ -3,10 +3,9 @@ global using ClassLibrary1.Manager;
 global using ClassLibrary1.Core;
 
 using Microsoft.EntityFrameworkCore;
-using WebApplication1;
 using Microsoft.AspNetCore.Identity;
-using System.Reflection;
 using AutoMapper;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -34,23 +33,15 @@ builder.Services.AddCors(opption =>
     });
 });
 
-
-// Auto Mapper Configurations
-builder.Services.AddAutoMapper(typeof(MappingProfile));
-var mappingConfig = new MapperConfiguration(mc =>
-{
-    mc.AddProfile(new MappingProfile());
-});
-
-IMapper mapper = mappingConfig.CreateMapper();
-builder.Services.AddSingleton(mapper);
-builder.Services.AddMvc();
-
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddDataProtection();
 
 builder.Services.AddScoped<ApplicationDbContext>();
 builder.Services.AddScoped<SystemUserManager>();
 builder.Services.AddScoped<CompanyManager>();
 builder.Services.AddScoped<TenantManager>();
+builder.Services.AddScoped<SecurityManager>();
+builder.Services.AddScoped<SaleTransactionManager>();
 
 var app = builder.Build();
 

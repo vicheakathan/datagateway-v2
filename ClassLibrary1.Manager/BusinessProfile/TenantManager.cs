@@ -15,10 +15,13 @@ namespace ClassLibrary1.Manager
 
         private readonly ApplicationDbContext _context;
 
-        public TenantManager(IMapper _mapper, ApplicationDbContext _context) 
+        private readonly SecurityManager _securityManager;
+
+        public TenantManager(IMapper _mapper, ApplicationDbContext _context, SecurityManager _securityManager) 
         { 
             this._mapper = _mapper;
             this._context = _context;
+            this._securityManager = _securityManager;
         }
 
         public async Task<object> GetTenantAsync()
@@ -29,6 +32,8 @@ namespace ClassLibrary1.Manager
         public async Task<object> AddTenantAsync(ClientTenant entity)
         {
             var tenant = _mapper.Map<ClientTenant, Tenant>(entity);
+
+            tenant.Password = _securityManager.EncryptPassword(entity.Password);
 
             _context.Add(tenant);
             await _context.SaveChangesAsync();
@@ -45,10 +50,26 @@ namespace ClassLibrary1.Manager
                 throw new InvalidOperationException("Not Found.");
             }
 
+            entity.Password = _securityManager.EncryptPassword(entity.Password);
+
             _mapper.Map<ClientTenant, Tenant>(entity, tenant);
 
             _context.Update(tenant);
             await _context.SaveChangesAsync();
+
+            return tenant;
+        }
+
+        public object DecryptPassword(Guid id)
+        {
+            var tenant = _context.Find<Tenant>(id);
+
+            if (tenant == null)
+            {
+                throw new InvalidOperationException("Not Found.");
+            }
+
+            tenant.Password = _securityManager.DecryptPassword(tenant.Password);
 
             return tenant;
         }

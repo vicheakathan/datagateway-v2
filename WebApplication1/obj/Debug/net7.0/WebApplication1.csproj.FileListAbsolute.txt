@@ -182,3 +182,6 @@ C:\Users\Admin\Project\repo\datagateway-v2\WebApplication1\obj\Debug\net7.0\refi
 C:\Users\Admin\Project\repo\datagateway-v2\WebApplication1\obj\Debug\net7.0\WebApplication1.pdb
 C:\Users\Admin\Project\repo\datagateway-v2\WebApplication1\obj\Debug\net7.0\WebApplication1.genruntimeconfig.cache
 C:\Users\Admin\Project\repo\datagateway-v2\WebApplication1\obj\Debug\net7.0\ref\WebApplication1.dll
+C:\Users\rd-user\project\repos\WebApplication1\WebApplication1\bin\Debug\net7.0\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\rd-user\project\repos\WebApplication1\WebApplication1\bin\Debug\net7.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\rd-user\project\repos\WebApplication1\WebApplication1\bin\Debug\net7.0\System.Security.Cryptography.Xml.dll

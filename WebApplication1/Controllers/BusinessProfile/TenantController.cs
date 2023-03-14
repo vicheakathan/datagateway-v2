@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication1.Controllers.BusinessProfile
+namespace WebApplication1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -26,7 +26,7 @@ namespace WebApplication1.Controllers.BusinessProfile
             }
             catch(Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest();
             }
         }
 
@@ -41,7 +41,7 @@ namespace WebApplication1.Controllers.BusinessProfile
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest();
             }
         }
 
@@ -56,7 +56,22 @@ namespace WebApplication1.Controllers.BusinessProfile
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet("DecryptPassword")]
+        public object DecryptPassword(Guid id)
+        {
+            try
+            {
+                var response = tenantManager.DecryptPassword(id);
+
+                return Ok(response);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest();
             }
         }
     }

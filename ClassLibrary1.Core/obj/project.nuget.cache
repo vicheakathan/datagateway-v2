@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "7mDxE9XZ8noGXzxm/rvO5mUj8z6ErwV8nqAqT1pbSdClS2xY/bMicxE3Y7wtn2c8Yq3OGUWGNBC9WKPsQna83Q==",
+  "dgSpecHash": "VE+7lsWQXOUqD1nTIf08Zcpf1KEComNGU0JCvQuxu9f226Si9hvhG2zY/CKZ8EIL+Gp/awbj3k1b42UTk4iaWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj",
+  "projectFilePath": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\rd-user\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\rd-user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\rd-user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\rd-user\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\rd-user\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\rd-user\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\rd-user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\rd-user\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

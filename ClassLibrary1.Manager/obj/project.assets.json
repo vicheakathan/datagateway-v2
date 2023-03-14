@@ -18,6 +18,19 @@
           }
         }
       },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "12.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -1267,6 +1280,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "AutoMapper": "12.0.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "Newtonsoft.Json": "13.0.3"
         },
         "compile": {
@@ -1312,6 +1327,20 @@
         "icon.png",
         "lib/netstandard2.1/AutoMapper.dll",
         "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.0": {
+      "sha512": "XCJ4E3oKrbRl1qY9Mr+7uyC0xZj1+bqQjmQRWTiTKiVuuXTny+7YFWHi20tPjwkMukLbicN6yGlDy5PZ4wyi1w==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
       ]
     },
     "Azure.Core/1.24.0": {
@@ -3688,24 +3717,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\rd-user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Manager\\ClassLibrary1.Manager.csproj",
+      "projectUniqueName": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Manager\\ClassLibrary1.Manager.csproj",
       "projectName": "ClassLibrary1.Manager",
-      "projectPath": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Manager\\ClassLibrary1.Manager.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Manager\\obj\\",
+      "projectPath": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Manager\\ClassLibrary1.Manager.csproj",
+      "packagesPath": "C:\\Users\\rd-user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Manager\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\rd-user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3719,8 +3743,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Model\\ClassLibrary1.Model.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Project\\repo\\datagateway-v2\\ClassLibrary1.Model\\ClassLibrary1.Model.csproj"
+            "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Model\\ClassLibrary1.Model.csproj": {
+              "projectPath": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Model\\ClassLibrary1.Model.csproj"
             }
           }
         }
@@ -3756,7 +3780,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

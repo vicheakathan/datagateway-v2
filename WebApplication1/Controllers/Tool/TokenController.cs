@@ -1,4 +1,4 @@
-﻿using ClassLibrary1.Core;
+﻿using ClassLibrary1.Core.Client.Authorize;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 

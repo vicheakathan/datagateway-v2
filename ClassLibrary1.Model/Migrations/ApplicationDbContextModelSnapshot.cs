@@ -145,6 +145,506 @@ namespace ClassLibrary1.Model.Migrations
                     b.ToTable("Companies");
                 });
 
+            modelBuilder.Entity("ClassLibrary1.Model.Payment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("CurrencyAbv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CurrencyCd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CurrencyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CurrencySign")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("ExchangeRate")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("IsCash")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PaymentCd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentTypeCd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentTypeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Rounding")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("SaleTransactionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Variance")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SaleTransactionId");
+
+                    b.ToTable("Payment");
+                });
+
+            modelBuilder.Entity("ClassLibrary1.Model.SaleItems", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CategoryAbv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoryCd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoryEnglishName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoryKhmerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Discount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("DiscountCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DiscountName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DiscountType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("GrandAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("GroupAbv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GroupCd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GroupEnglishName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GroupKhmerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GroupName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemCd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemSku")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameEnglish")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameKhmer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderByName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("OrderByTerminalId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("OrderByTerminalName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OrderDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Plt")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<long>("QueueNo")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("ReasonCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReasonCodeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("SaleTransactionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("SeatNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SizeAbv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SizeCd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SizeEnglishName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SizeKhmerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SizeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("SubAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Vat")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("VatPercentage")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("qty")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SaleTransactionId");
+
+                    b.ToTable("SaleItems");
+                });
+
+            modelBuilder.Entity("ClassLibrary1.Model.SaleRequest", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CallBackUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("SaleRequests");
+                });
+
+            modelBuilder.Entity("ClassLibrary1.Model.SaleTransaction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CardCd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ChanncelAbv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ChannelName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CouponCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CouponName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CouponPromotionCd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeliveryId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FloorAbv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FloorEnglishName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FloorId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FloorKhmerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FloorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("GrandTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("InvoiceById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InvoiceByName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InvoiceId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderByName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("OrderByTerminalId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("OrderByTerminalName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OrderDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("OrderId")
+                        .HasColumnType("bigint");
+
+                    b.Property<decimal>("OtherCharge")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Paid")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Pax")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Plt")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PltPercentage")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ReasonCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReasonName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReceiptByName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ReceiptByTerminalId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ReceiptByTernialName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReceiptId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReceiptNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReceiptRef")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReceptById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReferenceCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("RequestId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ScheduleDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SectionAbv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SectionEnglishName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SectionId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SectionKhmerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SectionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("ServiceCharge")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("SourceCd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SourceName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Subtotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("TableAbv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TableCd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TableEnglishName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TableKhmerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TableName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("TenderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("TotalDiscount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("TotalQty")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Vat")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("VatPercentage")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RequestId");
+
+                    b.ToTable("SaleTransactions");
+                });
+
+            modelBuilder.Entity("ClassLibrary1.Model.SaleTransactionDetails", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("CreateById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreateByName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("CreateByTerminalId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreateByTerminalName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Key")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Percentage")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("PromotionCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PromotionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReasonCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReasonCodeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("SaleTransactionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SaleTransactionId");
+
+                    b.ToTable("SaleTransactionDetails");
+                });
+
             modelBuilder.Entity("ClassLibrary1.Model.Tenant", b =>
                 {
                     b.Property<Guid>("Id")
@@ -279,6 +779,61 @@ namespace ClassLibrary1.Model.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ClassLibrary1.Model.Payment", b =>
+                {
+                    b.HasOne("ClassLibrary1.Model.SaleTransaction", "SaleTransaction")
+                        .WithMany("Payment")
+                        .HasForeignKey("SaleTransactionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SaleTransaction");
+                });
+
+            modelBuilder.Entity("ClassLibrary1.Model.SaleItems", b =>
+                {
+                    b.HasOne("ClassLibrary1.Model.SaleTransaction", "SaleTransaction")
+                        .WithMany("Items")
+                        .HasForeignKey("SaleTransactionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SaleTransaction");
+                });
+
+            modelBuilder.Entity("ClassLibrary1.Model.SaleRequest", b =>
+                {
+                    b.HasOne("ClassLibrary1.Model.Tenant", "Tenant")
+                        .WithMany()
+                        .HasForeignKey("TenantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tenant");
+                });
+
+            modelBuilder.Entity("ClassLibrary1.Model.SaleTransaction", b =>
+                {
+                    b.HasOne("ClassLibrary1.Model.SaleRequest", "SaleRequest")
+                        .WithMany("SaleTransactions")
+                        .HasForeignKey("RequestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SaleRequest");
+                });
+
+            modelBuilder.Entity("ClassLibrary1.Model.SaleTransactionDetails", b =>
+                {
+                    b.HasOne("ClassLibrary1.Model.SaleTransaction", "SaleTransaction")
+                        .WithMany("TransactionDetails")
+                        .HasForeignKey("SaleTransactionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SaleTransaction");
+                });
+
             modelBuilder.Entity("ClassLibrary1.Model.Tenant", b =>
                 {
                     b.HasOne("ClassLibrary1.Model.Company", "Company")
@@ -344,6 +899,20 @@ namespace ClassLibrary1.Model.Migrations
             modelBuilder.Entity("ClassLibrary1.Model.Company", b =>
                 {
                     b.Navigation("Tenants");
+                });
+
+            modelBuilder.Entity("ClassLibrary1.Model.SaleRequest", b =>
+                {
+                    b.Navigation("SaleTransactions");
+                });
+
+            modelBuilder.Entity("ClassLibrary1.Model.SaleTransaction", b =>
+                {
+                    b.Navigation("Items");
+
+                    b.Navigation("Payment");
+
+                    b.Navigation("TransactionDetails");
                 });
 #pragma warning restore 612, 618
         }

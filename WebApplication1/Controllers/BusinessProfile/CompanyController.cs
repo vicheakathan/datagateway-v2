@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication1.Controllers.BusinessProfile
+namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -25,7 +25,7 @@ namespace WebApplication1.Controllers.BusinessProfile
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest();
             }
         }
 
@@ -40,7 +40,7 @@ namespace WebApplication1.Controllers.BusinessProfile
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest();
             }
         }
 
@@ -55,7 +55,7 @@ namespace WebApplication1.Controllers.BusinessProfile
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest();
             }
         }
     }
