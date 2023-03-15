@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "VE+7lsWQXOUqD1nTIf08Zcpf1KEComNGU0JCvQuxu9f226Si9hvhG2zY/CKZ8EIL+Gp/awbj3k1b42UTk4iaWQ==",
+  "dgSpecHash": "4BmIKaqJpTbUap7LoD/E8m8Vlz2vTKZ0NAXRH8otqCiC1i0ea9tzvw1p+EglfuYB6zMBsg/f09Hl7v4tWDVLfQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\rd-user\\project\\repos\\WebApplication1\\ClassLibrary1.Core\\ClassLibrary1.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\rd-user\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\rd-user\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\rd-user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\rd-user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\rd-user\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",

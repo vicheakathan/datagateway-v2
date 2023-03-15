@@ -15,15 +15,46 @@ namespace WebApplication1.Controllers.DataGateway
         }
 
         [HttpPost]
-        public async Task<object> PostSaleTransaction([FromBody] ClientDataGateway entity)
+        public async Task<object> PostSaleTransactionAsync([FromBody] ClientDataGateway entity)
         {
             try
             {
-                var response = await _saleTransactionManager.SubmitSaleTransaction(entity);
+                var response = await _saleTransactionManager.PostSaleTransactionAsync(entity);
 
                 return Ok(response);
             }
             catch(Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpGet]
+        public async Task<object> GetSaleTransactionAsync()
+        {
+            try
+            {
+                var response = await _saleTransactionManager.GetSaleTransactionAsync();
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpGet]
+        [Route("AddTaskByRequest")]
+        public async Task<object> GETAddTaskByRequest([FromQuery] Guid saleId)
+        {
+            try
+            {
+                var response = await _saleTransactionManager.Add(saleId);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex);
             }

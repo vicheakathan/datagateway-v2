@@ -19,13 +19,15 @@ namespace ClassLibrary1.Model
 
         public DbSet<Tenant>? Tenants { get; set; }
 
-        public DbSet<SaleTransaction> SaleTransactions { get; set; }
+        public DbSet<SaleTransaction>? SaleTransactions { get; set; }
 
-        public DbSet<SaleItems> SaleItems { get; set; }
+        public DbSet<SaleItems>? SaleItems { get; set; }
 
-        public DbSet<SaleRequest> SaleRequests { get; set; }
+        public DbSet<SaleRequest>? SaleRequests { get; set; }
 
-        public DbSet<SaleTransactionDetails> SaleTransactionDetails { get; set; }
+        public DbSet<SaleTransactionDetails>? SaleTransactionDetails { get; set; }
+
+        public DbSet<TaskSaleTransaction>? TaskSaleTransaction { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

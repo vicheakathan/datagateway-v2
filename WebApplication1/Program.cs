@@ -6,15 +6,22 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using AutoMapper;
 using System.Reflection;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
 // Add services to the container.
 
+
 builder.AddSystemAutentication();
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -36,12 +43,16 @@ builder.Services.AddCors(opption =>
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddDataProtection();
 
+builder.Services.AddHostedService<IntegrationMonitor>();
+builder.Services.AddSingleton<RunBackground>();
 builder.Services.AddScoped<ApplicationDbContext>();
 builder.Services.AddScoped<SystemUserManager>();
 builder.Services.AddScoped<CompanyManager>();
 builder.Services.AddScoped<TenantManager>();
 builder.Services.AddScoped<SecurityManager>();
 builder.Services.AddScoped<SaleTransactionManager>();
+builder.Services.AddScoped<TaskSaleTransactionManager>();
+builder.Services.AddScoped<IntegrationManager>();
 
 var app = builder.Build();
 
@@ -53,6 +64,7 @@ var app = builder.Build();
 //}
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseCors();
 
 app.UseHttpsRedirection();
 

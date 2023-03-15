@@ -10,8 +10,6 @@ namespace ClassLibrary1.Core
 {
     public class ClientSaleTransaction
     {
-        [Key]
-        [Column(Order = 0)]
         [IgnoreMapping]
         public Guid Id { get; set; }
 
@@ -160,13 +158,18 @@ namespace ClassLibrary1.Core
         [IgnoreMapping]
         public List<ClientSaleTransactionDetails> SaleTransactionDetails { get; set; }
 
+        [IgnoreMapping]
+        public List<ClientTaskSaleTransaction> TaskSaleTransactions { get; set; }
+
         public ClientSaleTransaction()
         {
             Payment= new List<ClientPayment>();
 
             Items= new List<ClientSaleItems>();
 
-            SaleTransactionDetails= new List<ClientSaleTransactionDetails>();
+            SaleTransactionDetails = new List<ClientSaleTransactionDetails>();
+
+            TaskSaleTransactions = new List<ClientTaskSaleTransaction>();
         }
     }
 }
