@@ -11,14 +11,14 @@ namespace ClassLibrary1.Manager
             hashProtector = dataProtector.CreateProtector("Hash");
         }
 
-        public string EncryptPassword(string password)
+        public string EncryptPassword(string? password)
         {
             string hash = hashProtector.Protect(password);
 
             return hash;
         }
 
-        public string DecryptPassword(string password)
+        public string DecryptPassword(string? password)
         {
             string hash = hashProtector.Unprotect(password);
             return hash;

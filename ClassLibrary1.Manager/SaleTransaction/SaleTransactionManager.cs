@@ -2,6 +2,7 @@
 using ClassLibrary1.Core;
 using ClassLibrary1.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,39 +43,23 @@ namespace ClassLibrary1.Manager
             return await _context.Set<SaleTransaction>().ToListAsync();
         }
 
-        public async Task<object> GetSaleTransactionById(Guid id)
+        public async Task<SaleTransaction> GetSaleTransactionById(Guid id)
         {
-            var sale = await _context.Set<SaleTransaction>()
-                .Where(x => x.Id == id).Include(x => x.Items)
+            var sale = await _context.Set<SaleTransaction>().Where(x => x.Id == id)
+                .Include(x => x.Items)
                 .Include(x => x.Payment)
                 .Include(x => x.SaleTransactionDetails)
                 .Include(x => x.SaleRequest)
                 .ThenInclude(x => x.Tenant)
-                .ToListAsync();
+                .FirstOrDefaultAsync();
+
+            if (sale == null)
+            {
+                throw new InvalidOperationException("Not Found.");
+            }
 
             return sale;
         }
 
-        public async Task<object> Add(Guid saleRequestId)
-        {
-            TaskSaleTransaction task = new TaskSaleTransaction();
-            
-            var requestSaleTrans = await _context.Set<SaleTransaction>().Where(x => x.RequestId == saleRequestId).Select(x => x.Id).ToListAsync();
-
-            foreach (var saleTran in requestSaleTrans)
-            {
-                task.SaleTransactionId = saleTran;
-                task.CreatedDate = DateTime.Now;
-                task.IsSuccess = false;
-                task.IsFail = false;
-            }
-
-            _context.Add(task);
-            await _context.SaveChangesAsync();
-
-            //await Process(task.Id, true);
-
-            return task;
-        }
     }
 }

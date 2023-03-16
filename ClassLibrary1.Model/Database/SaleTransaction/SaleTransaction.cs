@@ -224,7 +224,7 @@ namespace ClassLibrary1.Model
 
         public ICollection<TaskSaleTransaction> TaskSaleTransaction { get; set; }
 
-        public ICollection<SaleIntegration> SaleIntegration { get; set; }
+        public ICollection<SaleIntegration>? SaleIntegration { get; set; }
 
         public SaleTransaction()
         {

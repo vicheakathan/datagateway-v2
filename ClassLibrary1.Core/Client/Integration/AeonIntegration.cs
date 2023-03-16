@@ -80,7 +80,32 @@ namespace ClassLibrary1.Core
 
         public AeonIntegration()
         {
-            
+        }
+
+        public AeonIntegration(Guid transactionId, string receiptId, string invoiceId, string documentType, DateTime datetime, string currencyName, string discountType, decimal discountAmount, int returnQty, int refundQty, int refundAmount, string paymentMethod1, decimal paymentAmount1, string paymentMethod2, decimal paymentAmount2, string paymentMethod3, decimal paymentAmount3, string deliveryService, decimal exchangeRateValue, decimal vat, string cashierId, decimal amountBeforeVatDiscount) : this()
+        {
+            TransactionId = transactionId;
+            ReceiptId = receiptId;
+            InvoiceId = invoiceId;
+            DocumentType = documentType;
+            Datetime = datetime;
+            CurrencyName = currencyName;
+            DiscountType = discountType;
+            DiscountAmount = discountAmount;
+            ReturnQty = returnQty;
+            RefundQty = refundQty;
+            RefundAmount = refundAmount;
+            PaymentMethod1 = paymentMethod1;
+            PaymentAmount1 = paymentAmount1;
+            PaymentMethod2 = paymentMethod2;
+            PaymentAmount2 = paymentAmount2;
+            PaymentMethod3 = paymentMethod3;
+            PaymentAmount3 = paymentAmount3;
+            DeliveryService = deliveryService;
+            ExchangeRateValue = exchangeRateValue;
+            Vat = vat;
+            CashierId = cashierId;
+            AmountBeforeVatDiscount = amountBeforeVatDiscount;
         }
     }
 }

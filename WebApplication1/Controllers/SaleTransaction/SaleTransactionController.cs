@@ -44,20 +44,6 @@ namespace WebApplication1.Controllers.DataGateway
             }
         }
 
-        [HttpGet]
-        [Route("AddTaskByRequest")]
-        public async Task<object> GETAddTaskByRequest([FromQuery] Guid saleId)
-        {
-            try
-            {
-                var response = await _saleTransactionManager.Add(saleId);
-
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-        }
+        
     }
 }

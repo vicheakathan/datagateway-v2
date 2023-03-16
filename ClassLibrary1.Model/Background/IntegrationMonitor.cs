@@ -34,7 +34,9 @@ namespace ClassLibrary1.Model
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            //_timer = new Timer(CallOnResubmitAll, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
+            CloundSystemEvent.Instand.TaskCreated += Instand_TaskCreated;
+
+            //_timer = new Timer(CallOnResubmitAll, null, TimeSpan.Zero, TimeSpan.FromMinutes(2));
 
             return Task.CompletedTask;
         }
@@ -51,9 +53,22 @@ namespace ClassLibrary1.Model
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(host);
 
-            //client.PostAsync($"/api/TaskSaleTransaction/SubmitIntegration", null);
+            client.PostAsync($"/api/TaskSaleTransaction/SubmitIntegration", null);
 
             _logger.LogWarning($"Submit integration have been called...");
+        }
+
+        private void Instand_TaskCreated(Guid taskId)
+        {
+            var host = _configuration.GetSection("IntegrationSetting").GetValue<string>(_environment.IsDevelopment() ? "LocalHostUrl" : "ProductionUrl");
+
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(host);
+
+            client.GetAsync($"/api/TaskSaleTransaction/AddTaskByRequest?saleId={taskId}");
+
+            _logger.LogWarning($"Event have been invoked by task id:{taskId}.");
+
         }
     }
 }

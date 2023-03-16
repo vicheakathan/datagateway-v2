@@ -8,6 +8,7 @@ using AutoMapper;
 using System.Reflection;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -53,6 +54,12 @@ builder.Services.AddScoped<SecurityManager>();
 builder.Services.AddScoped<SaleTransactionManager>();
 builder.Services.AddScoped<TaskSaleTransactionManager>();
 builder.Services.AddScoped<IntegrationManager>();
+builder.Services.AddScoped<IntegrationBuilder>();
+
+builder.Services.AddHttpClient("aeon", option =>
+{
+    option.BaseAddress = new Uri(config.GetSection("IntegrationSetting").GetValue<string>("IntegrationUrl"));
+});
 
 var app = builder.Build();
 

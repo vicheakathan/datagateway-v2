@@ -1,10 +1,12 @@
 ﻿using ClassLibrary1.Model;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,27 +30,70 @@ namespace ClassLibrary1.Manager
             this._saleTransactionManager = saleTransactionManager;
         }
 
-        public async Task SubmitError()
+        public async Task<object> SubmitIntegration()
         {
-            var task = await _context.Set<TaskSaleTransaction>().Where(x => x.IsFail == false).Select(x => x.SaleTransactionId).Distinct().ToListAsync();
+            var saleTransacton = await _context.Set<TaskSaleTransaction>().Where(x => x.IsFail == true).Select(x => x.SaleTransactionId).ToListAsync();
 
-            foreach (var transaction in task)
+            if (saleTransacton.Count() == 0)
             {
-                await SubmitIntegrationAsync(transaction);
+                return new HttpResponseMessage(HttpStatusCode.NotFound);
             }
+
+            foreach (var transaction in saleTransacton)
+            {
+                var saleTransaction = await _saleTransactionManager.GetSaleTransactionById(transaction);
+
+                if (saleTransaction == null) return null;
+
+                var result = await _integrationManager.CheckSubmitData(saleTransaction, saleTransaction?.SaleRequest?.Tenant);
+
+                if (result)
+                {
+                    var taskSaleTransaction = await _context.Set<TaskSaleTransaction>().Where(x => x.SaleTransactionId == transaction).ToListAsync();
+
+                    foreach (var task in taskSaleTransaction)
+                    {
+                        task.IsSuccess = true;
+                        task.IsFail = false;
+                        task.CompleteDate = DateTime.Now;
+
+                        _context.Update(task);
+                    }
+
+                    await _context.SaveChangesAsync();
+                }
+            }
+
+            return new HttpResponseMessage();
         }
 
-        public async Task SubmitIntegrationAsync(Guid saleId)
+        public async Task<object> PostTaskSaleTransaction(Guid saleRequestId)
         {
-            _logger.LogInformation(message: "Preparing data for submit sale transaction to aeon", saleId);
+            var requestSaleTrans = await _context.Set<SaleTransaction>().Where(x => x.RequestId == saleRequestId).Select(x => x.Id).ToListAsync();
 
-            var saleTransaction = await _saleTransactionManager.GetSaleTransactionById(saleId);
+            if (requestSaleTrans == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.NotFound);
+            }
 
-            if (saleTransaction == null) return;
+            var tenant = _context.Set<SaleRequest>().Where(x => x.Id == saleRequestId).Include(x => x.Tenant).FirstOrDefault();
 
-            //var result = await _integrationManager.SubmitAeonSale(saleTransaction, saleTransaction);
+            foreach (var saleTran in requestSaleTrans)
+            {
+                TaskSaleTransaction task = new TaskSaleTransaction();
 
-            //if (result) await UpdateTransactionRelatedWith(saleTransactionId);
+                task.SaleTransactionId = saleTran;
+                task.CreatedDate = DateTime.Now;
+                task.IsSuccess = false;
+                task.IsFail = true;
+                task.Tenant = tenant.Tenant.Name;
+
+                _context.Add(task);
+            }
+
+            await _context.SaveChangesAsync();
+
+            return requestSaleTrans;
         }
     }
 }

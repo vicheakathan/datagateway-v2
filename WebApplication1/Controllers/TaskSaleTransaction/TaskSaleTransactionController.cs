@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ClassLibrary1.Manager;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
@@ -18,13 +19,29 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                var response = _taskSaleTransactionManager.SubmitError();
+                var response = await _taskSaleTransactionManager.SubmitIntegration();
 
                 return Ok(response);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("AddTaskByRequest")]
+        public async Task<object> GETAddTaskByRequest([FromQuery] Guid saleId)
+        {
+            try
+            {
+                var response = await _taskSaleTransactionManager.PostTaskSaleTransaction(saleId);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
     }
