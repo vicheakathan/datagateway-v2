@@ -2,6 +2,7 @@
 using ClassLibrary1.Core;
 using ClassLibrary1.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;

@@ -29,6 +29,10 @@ namespace ClassLibrary1.Model
 
         public DbSet<TaskSaleTransaction>? TaskSaleTransaction { get; set; }
 
+        public DbSet<ErrorLog>? ErrorLog { get; set; }
+
+        public DbSet<SaleTransactionHistory>? SaleTransactionHistory { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

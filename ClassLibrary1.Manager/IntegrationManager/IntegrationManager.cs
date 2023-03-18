@@ -5,6 +5,7 @@ using ClassLibrary1.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -55,7 +56,7 @@ namespace ClassLibrary1.Manager
 
                 await Login(client, credential);
 
-                var submitResult = await FinalSubmitDataToMall(client, aeonSale);
+                var submitResult = await FinalSubmitDataToMall(client, aeonSale, tenant);
 
                 if (submitResult)
                     await InertSaleIntegration(saleTransaction);
@@ -64,11 +65,24 @@ namespace ClassLibrary1.Manager
             }
             catch (Exception ex)
             {
+                #region error log
+
+                ErrorLog error = new ErrorLog();
+                error.CreateDate = DateTime.Now;
+                error.ErrorType = "Fail Integration";
+                error.Data = ex.Message;
+                error.Tenant = tenant.Name;
+
+                _context.Add(error);
+                await _context.SaveChangesAsync();
+
+                #endregion
+
                 return false;
             }
         }
 
-        public async Task<bool> FinalSubmitDataToMall(HttpClient client, AeonIntegration data)
+        public async Task<bool> FinalSubmitDataToMall(HttpClient client, AeonIntegration data, Tenant tenant)
         {
             StringContent stringContent = new StringContent(JObject.FromObject(data).ToString(), System.Text.Encoding.UTF8, "application/json");
 
@@ -76,6 +90,33 @@ namespace ClassLibrary1.Manager
             var stringResponse = await response.Content.ReadAsStringAsync();
 
             _logger.LogInformation("Monitor response data from intergration.", JObject.Parse(stringResponse));
+
+            #region insert data into SaleTransactionHistory & ErrorLog
+
+            if (response.IsSuccessStatusCode == true)
+            {
+                SaleTransactionHistory history = new SaleTransactionHistory();
+                history.CreateDate = DateTime.Now;
+                history.Data = JsonConvert.SerializeObject(data);
+                history.Response = stringResponse;
+                history.Tenant = tenant.Name;
+
+                _context.Add(history);
+            }
+            else
+            {
+                ErrorLog error = new ErrorLog();
+                error.CreateDate = DateTime.Now;
+                error.ErrorType = "Fail Submit Data To Mall";
+                error.Data = stringResponse;
+                error.Tenant = tenant.Name;
+
+                _context.Add(error);
+            }
+
+            await _context.SaveChangesAsync();
+
+            #endregion
 
             return response.IsSuccessStatusCode;
         }

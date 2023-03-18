@@ -47,21 +47,27 @@ namespace ClassLibrary1.Manager
 
                 var result = await _integrationManager.CheckSubmitData(saleTransaction, saleTransaction?.SaleRequest?.Tenant);
 
-                if (result)
-                {
-                    var taskSaleTransaction = await _context.Set<TaskSaleTransaction>().Where(x => x.SaleTransactionId == transaction).ToListAsync();
+                var taskSaleTransaction = await _context.Set<TaskSaleTransaction>().Where(x => x.SaleTransactionId == transaction).ToListAsync();
 
-                    foreach (var task in taskSaleTransaction)
+                foreach (var task in taskSaleTransaction)
+                {
+                    if (result == true)
                     {
                         task.IsSuccess = true;
                         task.IsFail = false;
                         task.CompleteDate = DateTime.Now;
-
-                        _context.Update(task);
+                    }
+                    else
+                    {
+                        task.IsSuccess = false;
+                        task.IsFail = true;
+                        task.FailDate= DateTime.Now;
                     }
 
-                    await _context.SaveChangesAsync();
+                    _context.Update(task);
                 }
+
+                await _context.SaveChangesAsync();
             }
 
             return new HttpResponseMessage();
@@ -81,6 +87,11 @@ namespace ClassLibrary1.Manager
             foreach (var saleTran in requestSaleTrans)
             {
                 TaskSaleTransaction task = new TaskSaleTransaction();
+
+                var existingTaskSaleTransaction = await _context.Set<TaskSaleTransaction>().Where(x => x.SaleTransactionId == saleTran).FirstOrDefaultAsync();
+
+                if (existingTaskSaleTransaction != null)
+                    break;
 
                 task.SaleTransactionId = saleTran;
                 task.CreatedDate = DateTime.Now;

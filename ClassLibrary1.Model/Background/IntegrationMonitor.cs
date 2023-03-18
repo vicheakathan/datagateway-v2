@@ -36,7 +36,7 @@ namespace ClassLibrary1.Model
         {
             CloundSystemEvent.Instand.TaskCreated += Instand_TaskCreated;
 
-            //_timer = new Timer(CallOnResubmitAll, null, TimeSpan.Zero, TimeSpan.FromMinutes(2));
+            _timer = new Timer(CallOnResubmitAll, null, TimeSpan.Zero, TimeSpan.FromMinutes(2));
 
             return Task.CompletedTask;
         }

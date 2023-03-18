@@ -35,9 +35,7 @@ builder.Services.AddCors(opption =>
 {
     opption.AddDefaultPolicy(config =>
     {
-        config.AllowAnyOrigin()
-        .AllowAnyMethod()
-        .AllowAnyHeader();
+        config.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
     });
 });
 
@@ -55,10 +53,15 @@ builder.Services.AddScoped<SaleTransactionManager>();
 builder.Services.AddScoped<TaskSaleTransactionManager>();
 builder.Services.AddScoped<IntegrationManager>();
 builder.Services.AddScoped<IntegrationBuilder>();
+builder.Services.AddScoped<TestIntegrationManager>();
 
 builder.Services.AddHttpClient("aeon", option =>
 {
-    option.BaseAddress = new Uri(config.GetSection("IntegrationSetting").GetValue<string>("IntegrationUrl"));
+    option.BaseAddress = new Uri(config.GetSection("IntegrationSetting").GetValue<string>("AeonIntegrationUrl"));
+});
+builder.Services.AddHttpClient("test", option =>
+{
+    option.BaseAddress = new Uri(config.GetSection("IntegrationSetting").GetValue<string>("TestIntegrationUrl"));
 });
 
 var app = builder.Build();
